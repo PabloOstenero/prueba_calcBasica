@@ -1,5 +1,6 @@
 import app.Calculadora
 import ui.Consola
+import utils.Ficheros
 
 /*
 fun main() {
@@ -24,8 +25,8 @@ fun main() {
 }
 */
 
-fun main() {
-    Calculadora(Consola()).iniciar()
+fun main(args: Array<String>) {
+    Calculadora(Consola(), Ficheros()).iniciar(args)
 }
 
 
