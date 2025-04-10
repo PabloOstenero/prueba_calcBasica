@@ -47,7 +47,7 @@ class Calculadora(private val ui: IEntradaSalida, private val ficheros: IUtilFic
                     val num2 = args[3].toDoubleOrNull() ?: throw InfoCalcException("El segundo número no es válido!")
 
                     val resultado = realizarCalculo(num1, op, num2)
-                    val resStr = "$num1 $op $num2 = ${".2f".format(resultado)}"
+                    val resStr = "$num1 ${op.simbolos[0]} $num2 = ${"%.2f".format(resultado)}"
 
                     ui.mostrar(resStr)
 
@@ -74,7 +74,7 @@ class Calculadora(private val ui: IEntradaSalida, private val ficheros: IUtilFic
                 val (numero1, operador, numero2) = pedirInfo()
                 val resultado = realizarCalculo(numero1, operador, numero2)
 
-                val resStr = "$numero1 $operador $numero2 = ${"%.2f".format(resultado)}"
+                val resStr = "$numero1 ${operador.simbolos[0]} $numero2 = ${"%.2f".format(resultado)}"
                 ui.mostrar(resStr)
 
                 contenido += resStr + "\n"
